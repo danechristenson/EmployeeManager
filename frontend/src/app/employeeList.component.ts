@@ -21,7 +21,7 @@ const DATA: employee[] = [
     <button mat-icon-button color="primary" matToolTip="Add new employee">
       <mat-icon (click)="addEmployee()" aria-label="add employee">add</mat-icon>
     </button>
-    <table mat-table [dataSource]="employees" class="mat-elevation-z8">
+    <table mat-table matSort [dataSource]="employees" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
         <td mat-cell *matCellDef="let element">
