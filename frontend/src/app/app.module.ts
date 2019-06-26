@@ -19,7 +19,7 @@ import { EmployeeListComponent } from './employeeList.component';
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

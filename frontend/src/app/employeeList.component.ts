@@ -18,21 +18,20 @@ const DATA: employee[] = [
 @Component({
   selector: "employees",
   template: `
+    <button mat-icon-button color="primary" matToolTip="Add new employee">
+      <mat-icon (click)="addEmployee()" aria-label="add employee">add</mat-icon>
+    </button>
     <table mat-table [dataSource]="employees" class="mat-elevation-z8">
-    <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button color="accent" matTooltip="edit a contact">
+          <button mat-icon-button color="primary" matTooltip="edit a employee">
             <mat-icon (click)="editEmployee(element.id)" aria-label="edit employee">edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" matTooltip="delete a contact">
+          <button mat-icon-button color="warn" matTooltip="delete a employee">
             <mat-icon (click)="deleteEmployee(element.id)" aria-label="delete employee">delete</mat-icon>
           </button>
         </td>
-      </ng-container>
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -60,7 +59,7 @@ const DATA: employee[] = [
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     
-      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
     <mat-paginator [length] = "100"
       [pageSize]= "10"
@@ -71,15 +70,17 @@ const DATA: employee[] = [
 export class EmployeeListComponent {
   displayedColumns: string[] = ["id", "name", "contact", "createdDate", "manager", "startTime", "endTime"];
   employees = DATA;
-  onRowClicked(row:any) {
-    console.log("Row clicked: ", row);
-  }
 
   editEmployee(id:number){
-
+    console.log(`edit called on id: ${id} `);
   }
   deleteEmployee(id:number){
-
+    console.log(`delete called on id: ${id} `);
   }
+
+  addEmployee(){
+    console.log(`add called`);
+  }
+
 
 }
