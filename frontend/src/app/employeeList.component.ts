@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebService } from './web.service';
 
 export interface employee {
   id: number;
@@ -20,8 +21,9 @@ const DATA: employee[] = [
   templateUrl: 'employeeList.component.html'
 })
 export class EmployeeListComponent {
+  constructor(private webService: WebService){}
   displayedColumns: string[] = ["id", "name", "contact", "createdDate", "manager", "startTime", "endTime"];
-  employees = DATA;
+  employees = this.webService.employees;
 
   editEmployee(id:number){
     console.log(`edit called on id: ${id} `);

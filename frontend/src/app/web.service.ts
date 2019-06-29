@@ -5,32 +5,33 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class WebService {
-  BASE_URL:string = 'https://localhost:44308/api/';
+  BASE_URL:string = 'https://localhost:8080/';
 
-  private messageStore:any = [];
-  private messageSubject = new Subject();
+  private employeeStore:any = [];
+  private employeeSymbol = new Subject();
 
-  messages = this.messageSubject.asObservable();
+  employees = this.employeeSymbol.asObservable();
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {
-    this.getMessages('');
+    this.getEmployees('');
   }
 
-  getMessages(employeeId:string) {
+  getEmployees(employeeId:string) {
+    console.log("here");
     employeeId = (employeeId) ? '/' + employeeId : '';
-    this.http.get(this.BASE_URL+'messages' + employeeId).subscribe(response => {
-      this.messageStore = response;
-      this.messageSubject.next(this.messageStore);
+    this.http.get(this.BASE_URL+'employees' + employeeId).subscribe(response => {
+      this.employeeStore = response;
+      this.employeeSymbol.next(this.employeeStore);
     }, error => {
-      this.handleError("Unable to get messages.");
+      this.handleError("Unable to get employee.");
     });
   }
 
-  async postEmployee(message:any) {
+  async postEmployee(employee:any) {
     try {
-      let response = await this.http.post(this.BASE_URL + 'messages', message).toPromise();
-      this.messageStore.push(response);
-      this.messageSubject.next(this.messageStore);
+      let response = await this.http.post(this.BASE_URL + 'employees', employee).toPromise();
+      this.employeeStore.push(response);
+      this.employeeSymbol.next(this.employeeStore);
     } catch (error) {
       this.handleError("Unable to add employee.");
     }
