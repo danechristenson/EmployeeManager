@@ -1,5 +1,5 @@
 <button mat-icon-button color="primary" matToolTip="Add new employee">
-  <mat-icon (click)="addEmployee()" aria-label="add employee">add</mat-icon>
+  <mat-icon routerLink="/addEmployee" aria-label="add employee">add</mat-icon>
 </button>
 <table mat-table matSort [dataSource]="employees" class="mat-elevation-z8 full-width">
 <ng-container matColumnDef="id">

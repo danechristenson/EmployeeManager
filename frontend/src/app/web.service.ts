@@ -17,7 +17,6 @@ export class WebService {
   }
 
   getEmployees(employeeId:string) {
-    console.log("here");
     employeeId = (employeeId) ? '/' + employeeId : '';
     this.http.get(this.BASE_URL+'employees' + employeeId).subscribe(response => {
       this.employeeStore = response;

@@ -1,0 +1,27 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('firstName')}" matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('lastName')}" matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('gender')}"  matInput placeholder="Gender" formControlName="gender">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('address')}" matInput placeholder="Address" formControlName="address">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('city')}" mat-input-container matInput placeholder="City" formControlName="city">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="postal">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('phone')}" mat-input-container matInput placeholder="Phone" formControlName="phone">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary">Add Employee</button>
+  </form>
+</mat-card>
