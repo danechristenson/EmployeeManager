@@ -21,6 +21,6 @@ namespace EmployeeManagerBackend.Data
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
-        public DbSet<DepartmentStructure> DepartmentStructures { get; set; }
+        //public DbSet<DepartmentStructure> DepartmentStructures { get; set; }
     }
 }

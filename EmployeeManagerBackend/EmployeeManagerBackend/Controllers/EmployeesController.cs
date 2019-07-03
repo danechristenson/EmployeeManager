@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -19,7 +20,7 @@ namespace EmployeeManagerBackend.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Employees
-        public IQueryable<Employee> GetEmployees()
+         public IQueryable<Employee> GetEmployees()
         {
             return db.Employees;
         }

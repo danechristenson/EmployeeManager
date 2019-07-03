@@ -3,7 +3,8 @@ import { WebService } from './web.service';
 
 export interface employee {
   id: number;
-  name: string;
+  firstName: string;
+  lastName:string;
   contact: string;
   createdDate: string; // TODO: change to a proper date
   manager: string;
@@ -11,25 +12,21 @@ export interface employee {
   endTime: string;
 }
 
-const DATA: employee[] = [
-  {id: 0, name: "jim", contact: "1234 anywhere Canada", createdDate: "04/04/2019", manager: "tim", startTime: "8:00 am", endTime: "3:33pm"},
-  {id: 1, name: "time", contact: "5678 anywhere Canada", createdDate: "04/03/2019", manager: "jim", startTime: "9:00 am", endTime: "4:33pm"}
-]
-
 @Component({
   selector: "employees",
   templateUrl: 'employeeList.component.html'
 })
 export class EmployeeListComponent {
   constructor(private webService: WebService){}
-  displayedColumns: string[] = ["id", "name", "contact", "createdDate", "manager", "startTime", "endTime"];
+  displayedColumns: string[] = ["id", "firstName", "lastName", "contact", "createdDate", "manager", "startTime", "endTime"];
   employees = this.webService.employees;
 
   editEmployee(id:number){
     console.log(`edit called on id: ${id} `);
   }
   deleteEmployee(id:number){
-    console.log(`delete called on id: ${id} `);
+    // TODO: add confirmation box
+    this.webService.deleteEmployee(id);
   }
 
   addEmployee(){

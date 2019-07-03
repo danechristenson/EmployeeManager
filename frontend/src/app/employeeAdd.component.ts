@@ -21,7 +21,8 @@ export class EmployeeAddComponent {
       address: ['', Validators.required],
       city: ['', Validators.required],
       postal: ['', Validators.required],
-      phone: ['', Validators.required]
+      phone: ['', Validators.required],
+      createdDate: [new Date()]
     });
   }
 

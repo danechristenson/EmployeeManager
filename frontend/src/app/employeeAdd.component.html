@@ -19,7 +19,7 @@
       <input style="width: 350px" [ngClass]="{'error': isValid('postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="postal">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('phone')}" mat-input-container matInput placeholder="Phone" formControlName="phone">
+      <input style="width: 350px" [ngClass]="{'error': isValid('phone')}" type="number" mat-input-container matInput placeholder="Phone" formControlName="phone">
     </mat-form-field>
     <br>
     <button mat-raised-button color="primary">Add Employee</button>

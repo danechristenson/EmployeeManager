@@ -22,10 +22,22 @@ namespace EmployeeManagerBackend.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.Schedules",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        name = c.String(nullable: false),
+                        startTime = c.DateTime(nullable: false),
+                        endTime = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
+            DropTable("dbo.Schedules");
             DropTable("dbo.Employees");
         }
     }
