@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { WebService } from './web.service';
 import { MatDialog } from '@angular/material';
 import { EmployeeAddComponent } from './employeeAdd.component';
+import { EmployeeDeleteComponent } from './employeeDelete.component';
+import { EmployeeEditDialog } from './employeeEdit.dialog';
 
 export interface employee {
   id: number;
@@ -23,12 +25,24 @@ export class EmployeeListComponent {
   displayedColumns: string[] = ["id", "firstName", "lastName", "contact", "createdDate", "manager", "startTime", "endTime"];
   employees = this.webService.employees;
 
-  editEmployee(id:number){
-    console.log(`edit called on id: ${id} `);
+  editEmployee(employee: employee){
+    const dialogRef = this.dialog.open(EmployeeEditDialog, {
+      width: '650px',
+      data: {employee: employee}
+    });
   }
-  deleteEmployee(id:number){
-    // TODO: add confirmation box
-    this.webService.deleteEmployee(id);
+
+  deleteEmployee(id:number, firstName:string, lastName:string){
+    const dialogRef = this.dialog.open(EmployeeDeleteComponent, {
+      width: '650px',
+      data: {id: id, firstName: firstName, lastName: lastName, delete: 'delete'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == 'delete'){
+        this.webService.deleteEmployee(id);
+      }
+    })
   }
 
   addEmployee(){

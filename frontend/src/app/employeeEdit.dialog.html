@@ -1,0 +1,40 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field style="display:none">
+      <input style="width: 350px" [ngClass]="{'error': isValid('ID')}" matInput formControlName="ID" value="{{data.employee.id}}" readonly style="display:none">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('FirstName')}" matInput placeholder="First Name" formControlName="FirstName" value="{{data.employee.firstName}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('LastName')}" matInput placeholder="Last Name" formControlName="LastName" value="{{data.employee.lastName}}">
+    </mat-form-field>
+      <mat-radio-group matInput formControlName="Gender">
+        <mat-radio-button value="M">Male</mat-radio-button>
+        <mat-radio-button value="F">Female</mat-radio-button>
+      </mat-radio-group>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('Address')}" matInput placeholder="Address" formControlName="Address" value="{{data.employee.address}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('City')}" mat-input-container matInput placeholder="City" formControlName="City" value="{{data.employee.city}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('Postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="Postal" value="{{data.employee.postal}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('Phone')}" type="phone" mat-input-container matInput placeholder="Phone" formControlName="Phone" value="{{data.employee.phone}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('StartTime')}" mat-input-container matInput placeholder="Start Time" formControlName="StartTime" value="{{data.employee.startTime}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime" value="{{data.employee.EndTime}}">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID" value="{{data.employee.managerID}}">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button mat-dialog-close (click)="onSubmit()" color="primary">Save Employee</button>
+  </form>
+</mat-card>

@@ -6,10 +6,10 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
     <td mat-cell *matCellDef="let element">
       <button mat-icon-button color="primary" matTooltip="edit a employee">
-        <mat-icon (click)="editEmployee(element.id)" aria-label="edit employee">edit</mat-icon>
+        <mat-icon (click)="editEmployee(element)" aria-label="edit employee">edit</mat-icon>
       </button>
       <button mat-icon-button color="warn" matTooltip="delete a employee">
-        <mat-icon (click)="deleteEmployee(element.id)" aria-label="delete employee">delete</mat-icon>
+        <mat-icon (click)="deleteEmployee(element.id, element.firstName, element.lastName)" aria-label="delete employee">delete</mat-icon>
       </button>
     </td>
   </ng-container>

@@ -6,9 +6,10 @@
     <mat-form-field>
       <input style="width: 350px" [ngClass]="{'error': isValid('LastName')}" matInput placeholder="Last Name" formControlName="LastName">
     </mat-form-field>
-    <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('Gender')}"  matInput placeholder="Gender" formControlName="Gender">
-    </mat-form-field>
+      <mat-radio-group matInput formControlName="Gender">
+        <mat-radio-button value="M">Male</mat-radio-button>
+        <mat-radio-button value="F">Female</mat-radio-button>
+      </mat-radio-group>
     <mat-form-field>
       <input style="width: 350px" [ngClass]="{'error': isValid('Address')}" matInput placeholder="Address" formControlName="Address">
     </mat-form-field>
