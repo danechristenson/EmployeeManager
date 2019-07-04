@@ -1,27 +1,36 @@
 <mat-card>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('firstName')}" matInput placeholder="First Name" formControlName="firstName">
+      <input style="width: 350px" [ngClass]="{'error': isValid('FirstName')}" matInput placeholder="First Name" formControlName="FirstName">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('lastName')}" matInput placeholder="Last Name" formControlName="lastName">
+      <input style="width: 350px" [ngClass]="{'error': isValid('LastName')}" matInput placeholder="Last Name" formControlName="LastName">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('gender')}"  matInput placeholder="Gender" formControlName="gender">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Gender')}"  matInput placeholder="Gender" formControlName="Gender">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('address')}" matInput placeholder="Address" formControlName="address">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Address')}" matInput placeholder="Address" formControlName="Address">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('city')}" mat-input-container matInput placeholder="City" formControlName="city">
+      <input style="width: 350px" [ngClass]="{'error': isValid('City')}" mat-input-container matInput placeholder="City" formControlName="City">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="postal">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="Postal">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('phone')}" type="number" mat-input-container matInput placeholder="Phone" formControlName="phone">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Phone')}" type="phone" mat-input-container matInput placeholder="Phone" formControlName="Phone">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('StartTime')}" mat-input-container matInput placeholder="Start Time" formControlName="StartTime">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime">
+    </mat-form-field>
+    <mat-form-field>
+      <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID">
     </mat-form-field>
     <br>
-    <button mat-raised-button color="primary">Add Employee</button>
+    <button mat-raised-button mat-dialog-close (click)="onSubmit()" color="primary">Add Employee</button>
   </form>
 </mat-card>

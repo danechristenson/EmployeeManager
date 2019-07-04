@@ -11,20 +11,23 @@ namespace EmployeeManagerBackend.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
         [Required]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
         [Required]
-        public char gender { get; set; }
+        public char Gender { get; set; }
         [Required]
-        public string address { get; set; }
+        public string Address { get; set; }
         [Required]
-        public string city { get; set; }
+        public string City { get; set; }
         [Required]
-        public string postal { get; set; }
+        public string Postal { get; set; }
         [Required]
-        public int phone { get; set; }
+        public string Phone { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         [Required]
-        public DateTime createdDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Employee Manager { get; set; }
     }
 }

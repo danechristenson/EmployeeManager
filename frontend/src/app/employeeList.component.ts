@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { WebService } from './web.service';
+import { MatDialog } from '@angular/material';
+import { EmployeeAddComponent } from './employeeAdd.component';
 
 export interface employee {
   id: number;
@@ -17,7 +19,7 @@ export interface employee {
   templateUrl: 'employeeList.component.html'
 })
 export class EmployeeListComponent {
-  constructor(private webService: WebService){}
+  constructor(private webService: WebService, public dialog: MatDialog){}
   displayedColumns: string[] = ["id", "firstName", "lastName", "contact", "createdDate", "manager", "startTime", "endTime"];
   employees = this.webService.employees;
 
@@ -30,7 +32,9 @@ export class EmployeeListComponent {
   }
 
   addEmployee(){
-    console.log(`add called`);
+    const dialogRef = this.dialog.open(EmployeeAddComponent, {
+      width: '680px',
+    });
   }
 
 

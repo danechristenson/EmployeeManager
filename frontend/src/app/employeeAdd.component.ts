@@ -15,14 +15,17 @@ export class EmployeeAddComponent {
   form:any;
   constructor(private formBuilder: FormBuilder, private webService :WebService) {
     this.form = formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      gender: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      postal: ['', Validators.required],
-      phone: ['', Validators.required],
-      createdDate: [new Date()]
+      FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
+      Gender: ['', Validators.required],
+      Address: ['', Validators.required],
+      City: ['', Validators.required],
+      Postal: ['', Validators.required],
+      Phone: ['', Validators.required],
+      CreatedDate: [new Date()],
+      StartTime: [],
+      EndTime: [],
+      ManagerID: []
     });
   }
 

@@ -196,6 +196,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EmployeeListController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -206,6 +207,14 @@
     <Compile Include="Migrations\201907030320598_Initial.cs" />
     <Compile Include="Migrations\201907030320598_Initial.Designer.cs">
       <DependentUpon>201907030320598_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907040208003_on.cs" />
+    <Compile Include="Migrations\201907040208003_on.Designer.cs">
+      <DependentUpon>201907040208003_on.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907040218550_Initial1.cs" />
+    <Compile Include="Migrations\201907040218550_Initial1.Designer.cs">
+      <DependentUpon>201907040218550_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepartmentStructure.cs" />
@@ -256,6 +265,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907030320598_Initial.resx">
       <DependentUpon>201907030320598_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907040208003_on.resx">
+      <DependentUpon>201907040208003_on.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907040218550_Initial1.resx">
+      <DependentUpon>201907040218550_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
