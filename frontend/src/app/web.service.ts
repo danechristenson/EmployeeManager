@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class WebService {
+  
   BASE_URL:string = 'http://localhost:8080/api/';
 
   private employeeStore:any = [];
@@ -37,14 +38,22 @@ export class WebService {
   }
 
   async postEmployee(employee:any) {
-    console.log(employee);
     try {
       let response = await this.http.post(this.BASE_URL + 'Employees', employee).toPromise();
-      console.log(response);
       this.employeeStore.push(response);
       this.employeeSymbol.next(this.employeeStore);
     } catch (error) {
-      this.http.post(this.BASE_URL + 'Employees', employee);
+      this.handleError("Unable to delete employee.");
+    }
+  }
+  
+  async putEmployee(id: any, employee: any) {
+    try {
+      let response = await this.http.put(this.BASE_URL + 'Employees/' + id, employee).toPromise();
+      this.employeeStore.push(response);
+      this.employeeSymbol.next(this.employeeStore);
+    } catch (error) {
+      this.handleError("Unable to delete employee.");
     }
   }
   

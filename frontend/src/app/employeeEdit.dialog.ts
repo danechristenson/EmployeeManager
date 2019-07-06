@@ -26,27 +26,30 @@ export class EmployeeEditDialog {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
     private webService :WebService){
-      console.log(data);
+      console.log("edit start");
+      console.log( data);
       this.form = formBuilder.group({
-        ID: [],
-        FirstName: ['', Validators.required],
-        LastName: ['', Validators.required],
-        Gender: ['', Validators.required],
-        Address: ['', Validators.required],
-        City: ['', Validators.required],
-        Postal: ['', Validators.required],
-        Phone: ['', Validators.required],
-        CreatedDate: [new Date()],
-        StartTime: [],
-        EndTime: [],
-        ManagerID: []
+        Id: [data.employee.id],
+        FirstName: [data.employee.firstName, Validators.required],
+        LastName: [data.employee.lastName, Validators.required],
+        Gender: [data.employee.gender, Validators.required],
+        Address: [data.employee.address, Validators.required],
+        City: [data.employee.city, Validators.required],
+        Postal: [data.employee.postal, Validators.required],
+        Phone: [data.employee.phone, Validators.required],
+        CreatedDate: [data.employee.createdDate],
+        StartTime: [data.employee.startTime],
+        EndTime: [data.employee.endTime],
+        ManagerID: [data.employee.managerId]
       });
   }
   onNoClick(): void {
     this.dialogRef.close();
   }
   onSubmit(){
-    this.webService.postEmployee(this.form.value);
+    console.log('submit');
+    // console.log(this.form.value);
+    this.webService.putEmployee(this.data.employee.id, this.form.value);
   }
 
   isValid(control:string){

@@ -6,14 +6,14 @@ import { EmployeeDeleteComponent } from './employeeDelete.component';
 import { EmployeeEditDialog } from './employeeEdit.dialog';
 
 export interface employee {
-  id: number;
-  firstName: string;
-  lastName:string;
-  contact: string;
-  createdDate: string; // TODO: change to a proper date
-  manager: string;
-  startTime: string;
-  endTime: string;
+  Id: number;
+  FirstName: string;
+  LastName:string;
+  Contact: string;
+  CreatedDate: string;
+  Manager: string;
+  StartTime: string;
+  EndTime: string;
 }
 
 @Component({
@@ -26,6 +26,8 @@ export class EmployeeListComponent {
   employees = this.webService.employees;
 
   editEmployee(employee: employee){
+    console.log('edit clicked');
+    console.log(employee);
     const dialogRef = this.dialog.open(EmployeeEditDialog, {
       width: '650px',
       data: {employee: employee}

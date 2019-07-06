@@ -1,7 +1,7 @@
 <mat-card>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field style="display:none">
-      <input style="width: 350px" [ngClass]="{'error': isValid('ID')}" matInput formControlName="ID" value="{{data.employee.id}}" readonly style="display:none">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Id')}" matInput formControlName="Id" value="{{data.employee.id}}" readonly style="display:none">
     </mat-form-field>
     <mat-form-field>
       <input style="width: 350px" [ngClass]="{'error': isValid('FirstName')}" matInput placeholder="First Name" formControlName="FirstName" value="{{data.employee.firstName}}">
@@ -10,8 +10,8 @@
       <input style="width: 350px" [ngClass]="{'error': isValid('LastName')}" matInput placeholder="Last Name" formControlName="LastName" value="{{data.employee.lastName}}">
     </mat-form-field>
       <mat-radio-group matInput formControlName="Gender">
-        <mat-radio-button value="M">Male</mat-radio-button>
-        <mat-radio-button value="F">Female</mat-radio-button>
+        <mat-radio-button value="M" [checked]="data.employee.gender == 'M'">Male</mat-radio-button>
+        <mat-radio-button value="F" [checked]="data.employee.gender == 'F'">Female</mat-radio-button>
       </mat-radio-group>
     <mat-form-field>
       <input style="width: 350px" [ngClass]="{'error': isValid('Address')}" matInput placeholder="Address" formControlName="Address" value="{{data.employee.address}}">
