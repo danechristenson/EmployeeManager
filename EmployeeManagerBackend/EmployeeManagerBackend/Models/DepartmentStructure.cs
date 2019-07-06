@@ -10,10 +10,10 @@ namespace EmployeeManagerBackend.Models
     public class DepartmentStructure
     {
         
-
-        public Employee employee { get; set; }
-
-        public List<Employee> subordinates { get; set; }
+        [Key]
+        public int ManagerId { get; set; }
+        [Required]
+        public List<Employee> Subordinates { get; set; }
 
     }
 }

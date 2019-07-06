@@ -11,10 +11,12 @@ namespace EmployeeManagerBackend.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string name { get; set; }
+        public string Name { get; set; }
         [Required]
-        public DateTime startTime { get; set; }
+        public DateTime Day { get; set; }
         [Required]
-        public DateTime endTime { get; set; }
+        public DateTime StartTime { get; set; }
+        [Required]
+        public DateTime EndTime { get; set; }
     }
 }
