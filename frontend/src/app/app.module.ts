@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatTableModule, MatPaginatorModule, MatButtonModule, MatIconModule, MatSnackBarModule, MatInputModule, MatCardModule, MatToolbarModule, MatDialogModule, MatRadioModule} from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatButtonModule, MatIconModule, MatSnackBarModule, MatInputModule, MatCardModule, MatToolbarModule, MatDialogModule, MatRadioModule, MatSelectModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,6 +48,7 @@ let routes = [
     MatIconModule,
     MatDialogModule,
     MatRadioModule,
+    MatSelectModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),

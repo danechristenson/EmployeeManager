@@ -203,21 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907030320598_Initial.cs" />
-    <Compile Include="Migrations\201907030320598_Initial.Designer.cs">
-      <DependentUpon>201907030320598_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907040208003_on.cs" />
-    <Compile Include="Migrations\201907040208003_on.Designer.cs">
-      <DependentUpon>201907040208003_on.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907040218550_Initial1.cs" />
-    <Compile Include="Migrations\201907040218550_Initial1.Designer.cs">
-      <DependentUpon>201907040218550_Initial1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907060325463_Initial2.cs" />
-    <Compile Include="Migrations\201907060325463_Initial2.Designer.cs">
-      <DependentUpon>201907060325463_Initial2.cs</DependentUpon>
+    <Compile Include="Migrations\201907070318047_Initial.cs" />
+    <Compile Include="Migrations\201907070318047_Initial.Designer.cs">
+      <DependentUpon>201907070318047_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepartmentStructure.cs" />
@@ -266,17 +254,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907030320598_Initial.resx">
-      <DependentUpon>201907030320598_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907040208003_on.resx">
-      <DependentUpon>201907040208003_on.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907040218550_Initial1.resx">
-      <DependentUpon>201907040218550_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907060325463_Initial2.resx">
-      <DependentUpon>201907060325463_Initial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907070318047_Initial.resx">
+      <DependentUpon>201907070318047_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

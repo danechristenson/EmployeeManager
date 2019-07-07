@@ -19,7 +19,6 @@ export class WebService {
 
   getEmployees() {
     this.http.get(this.BASE_URL+'Employees').subscribe(response => {
-      console.log(response);
       this.employeeStore = response;
       this.employeeSymbol.next(this.employeeStore);
     }, error => {

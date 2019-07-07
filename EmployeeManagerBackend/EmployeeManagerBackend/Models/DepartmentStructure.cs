@@ -9,11 +9,10 @@ namespace EmployeeManagerBackend.Models
 {
     public class DepartmentStructure
     {
-        
-        [Key]
-        public int ManagerId { get; set; }
-        [Required]
+        [Key, Column(Order = 0)]
+        public Employee Manager { get; set; }
+        [Key, Column(Order = 1)]
         public List<Employee> Subordinates { get; set; }
-
+        
     }
 }

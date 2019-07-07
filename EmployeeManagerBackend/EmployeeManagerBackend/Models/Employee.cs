@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -14,7 +15,7 @@ namespace EmployeeManagerBackend.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required]
+        [Required, MinLength(1), MaxLength(1)]
         public char Gender { get; set; }
         [Required]
         public string Address { get; set; }
@@ -22,12 +23,12 @@ namespace EmployeeManagerBackend.Models
         public string City { get; set; }
         [Required]
         public string Postal { get; set; }
-        [Required]
+        [Required,MinLength(10),MaxLength(15)]
         public string Phone { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public DateTime? StartTime { get; set; }
+        public DateTime? EndTime { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
-        public Employee Manager { get; set; }
+        public Employee Manager{ get; set; }
     }
 }

@@ -26,8 +26,6 @@ export class EmployeeEditDialog {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
     private webService :WebService){
-      console.log("edit start");
-      console.log( data);
       this.form = formBuilder.group({
         Id: [data.employee.id],
         FirstName: [data.employee.firstName, Validators.required],

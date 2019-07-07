@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { WebService } from './web.service';
+import { employee } from './employeeList.component';
 
 @Component({
   selector: "employee",
@@ -13,6 +14,7 @@ import { WebService } from './web.service';
 })
 export class EmployeeAddComponent {
   form:any;
+  employees:any = this.webService.employees;
   constructor(private formBuilder: FormBuilder, private webService :WebService) {
     this.form = formBuilder.group({
       FirstName: ['', Validators.required],
@@ -27,6 +29,7 @@ export class EmployeeAddComponent {
       EndTime: [],
       ManagerID: []
     });
+    console.log(this.employees);
   }
 
   onSubmit(){
