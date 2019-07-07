@@ -29,8 +29,8 @@ export class WebService {
   getEmployee(employeeId: string){
     employeeId = (employeeId) ? '/' + employeeId : '';
     this.http.get(this.BASE_URL+'Employees/' +employeeId).subscribe(response => {
-      this.employeeStore = response;
-      this.employeeSymbol.next(this.employeeStore);
+      console.log(response);
+      return response;
     }, error => {
       this.handleError("Unable to get employee.");
     });
@@ -42,7 +42,7 @@ export class WebService {
       this.employeeStore.push(response);
       this.employeeSymbol.next(this.employeeStore);
     } catch (error) {
-      this.handleError("Unable to delete employee.");
+      this.handleError("Unable to create employee.");
     }
   }
   
@@ -52,7 +52,7 @@ export class WebService {
       this.employeeStore.push(response);
       this.employeeSymbol.next(this.employeeStore);
     } catch (error) {
-      this.handleError("Unable to delete employee.");
+      this.handleError("Unable to modify employee.");
     }
   }
   
@@ -64,6 +64,16 @@ export class WebService {
       this.handleError("Unable to delete employee.");
     });
   }
+
+  async postClockIn(schedule:any) {
+    try {
+      let response = await this.http.post(this.BASE_URL + 'Schedules', schedule).toPromise();
+    } catch (error) {
+      this.handleError("Unable to create employee.");
+    }
+  }
+
+
 
   private handleError(error:string) {
     this.snackBar.open(error, 'close', {duration: 2000});

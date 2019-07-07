@@ -45,8 +45,6 @@ export class EmployeeEditDialog {
     this.dialogRef.close();
   }
   onSubmit(){
-    console.log('submit');
-    // console.log(this.form.value);
     this.webService.putEmployee(this.data.employee.id, this.form.value);
   }
 

@@ -14,44 +14,44 @@ using EmployeeManagerBackend.Models;
 
 namespace EmployeeManagerBackend.Controllers
 {
-    public class EmployeesController : ApiController
+    public class SchedulesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Employees
-        public IQueryable<Employee> GetEmployees()
+        // GET: api/Schedules
+        public IQueryable<Schedule> GetSchedules()
         {
-            return db.Employees;
+            return db.Schedules;
         }
 
-        // GET: api/Employees/5
-        [ResponseType(typeof(Employee))]
-        public async Task<IHttpActionResult> GetEmployee(int id)
+        // GET: api/Schedules/5
+        [ResponseType(typeof(Schedule))]
+        public async Task<IHttpActionResult> GetSchedule(int id)
         {
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
+            Schedule schedule = await db.Schedules.FindAsync(id);
+            if (schedule == null)
             {
                 return NotFound();
             }
 
-            return Ok(employee);
+            return Ok(schedule);
         }
 
-        // PUT: api/Employees/5
+        // PUT: api/Schedules/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutEmployee(int id, Employee employee)
+        public async Task<IHttpActionResult> PutSchedule(int id, Schedule schedule)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != employee.Id)
+            if (id != schedule.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(employee).State = EntityState.Modified;
+            db.Entry(schedule).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace EmployeeManagerBackend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(id))
+                if (!ScheduleExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace EmployeeManagerBackend.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Employees
-        [ResponseType(typeof(Employee))]
-        public async Task<IHttpActionResult> PostEmployee(Employee employee)
-        {   
+        // POST: api/Schedules
+        [ResponseType(typeof(Schedule))]
+        public async Task<IHttpActionResult> PostSchedule(Schedule schedule)
+        {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Employees.Add(employee);
+            db.Schedules.Add(schedule);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = employee.Id }, employee);
+            return CreatedAtRoute("DefaultApi", new { id = schedule.Id }, schedule);
         }
 
-        // DELETE: api/Employees/5
-        [ResponseType(typeof(Employee))]
-        public async Task<IHttpActionResult> DeleteEmployee(int id)
+        // DELETE: api/Schedules/5
+        [ResponseType(typeof(Schedule))]
+        public async Task<IHttpActionResult> DeleteSchedule(int id)
         {
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
+            Schedule schedule = await db.Schedules.FindAsync(id);
+            if (schedule == null)
             {
                 return NotFound();
             }
 
-            db.Employees.Remove(employee);
+            db.Schedules.Remove(schedule);
             await db.SaveChangesAsync();
 
-            return Ok(employee);
+            return Ok(schedule);
         }
 
         protected override void Dispose(bool disposing)
@@ -112,9 +112,9 @@ namespace EmployeeManagerBackend.Controllers
             base.Dispose(disposing);
         }
 
-        private bool EmployeeExists(int id)
+        private bool ScheduleExists(int id)
         {
-            return db.Employees.Count(e => e.Id == id) > 0;
+            return db.Schedules.Count(e => e.Id == id) > 0;
         }
     }
 }

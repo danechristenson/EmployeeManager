@@ -15,8 +15,8 @@ namespace EmployeeManagerBackend.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required, MinLength(1), MaxLength(1)]
-        public char Gender { get; set; }
+        [Required, MaxLength(1)]
+        public string Gender { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
@@ -29,6 +29,8 @@ namespace EmployeeManagerBackend.Models
         public DateTime? EndTime { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
-        public Employee Manager{ get; set; }
+        [ForeignKey("Manager")]
+        public int? ManagerId { get; set; }
+        public virtual Employee Manager{ get; set; }
     }
 }

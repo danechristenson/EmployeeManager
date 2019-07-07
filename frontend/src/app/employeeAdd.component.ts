@@ -14,7 +14,7 @@ import { employee } from './employeeList.component';
 })
 export class EmployeeAddComponent {
   form:any;
-  employees:any = this.webService.employees;
+  managers:any = this.webService.employees;
   constructor(private formBuilder: FormBuilder, private webService :WebService) {
     this.form = formBuilder.group({
       FirstName: ['', Validators.required],
@@ -29,7 +29,7 @@ export class EmployeeAddComponent {
       EndTime: [],
       ManagerID: []
     });
-    console.log(this.employees);
+    console.log(this.managers);
   }
 
   onSubmit(){

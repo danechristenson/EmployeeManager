@@ -30,8 +30,8 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select>
-      <mat-option *ngFor="let employee of employee" [value]="employee.Id">
-        {{employee.FirstName}} {{ employee.LastName}}
+      <mat-option *ngFor="let manager of managers" [value]="manager.Id">
+        {{manager.FirstName}} {{ manager.LastName}}
       </mat-option>
     </mat-select>
       <!-- <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID"> -->

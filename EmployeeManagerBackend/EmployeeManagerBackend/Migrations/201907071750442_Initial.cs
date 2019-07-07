@@ -21,30 +21,34 @@ namespace EmployeeManagerBackend.Migrations
                         StartTime = c.DateTime(),
                         EndTime = c.DateTime(),
                         CreatedDate = c.DateTime(nullable: false),
-                        Manager_Id = c.Int(),
+                        ManagerId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Employees", t => t.Manager_Id)
-                .Index(t => t.Manager_Id);
+                .ForeignKey("dbo.Employees", t => t.ManagerId)
+                .Index(t => t.ManagerId);
             
             CreateTable(
                 "dbo.Schedules",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
+                        EmployeeId = c.Int(nullable: false),
                         Day = c.DateTime(nullable: false),
                         StartTime = c.DateTime(nullable: false),
                         EndTime = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Employees", t => t.EmployeeId, cascadeDelete: true)
+                .Index(t => t.EmployeeId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Employees", "Manager_Id", "dbo.Employees");
-            DropIndex("dbo.Employees", new[] { "Manager_Id" });
+            DropForeignKey("dbo.Schedules", "EmployeeId", "dbo.Employees");
+            DropForeignKey("dbo.Employees", "ManagerId", "dbo.Employees");
+            DropIndex("dbo.Schedules", new[] { "EmployeeId" });
+            DropIndex("dbo.Employees", new[] { "ManagerId" });
             DropTable("dbo.Schedules");
             DropTable("dbo.Employees");
         }

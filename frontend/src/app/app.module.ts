@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatTableModule, MatPaginatorModule, MatButtonModule, MatIconModule, MatSnackBarModule, MatInputModule, MatCardModule, MatToolbarModule, MatDialogModule, MatRadioModule, MatSelectModule} from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatButtonModule, MatIconModule, MatSnackBarModule, MatInputModule, MatCardModule, MatToolbarModule, MatDialogModule, MatRadioModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { EmployeeAddComponent } from './employeeAdd.component';
 import { NavComponent } from './nav.component';
 import { EmployeeDeleteComponent } from './employeeDelete.component';
 import { EmployeeEditDialog } from './employeeEdit.dialog';
+import { EmployeeTimesheetDialog } from './employeeTimesheet.dialog';
 
 let routes = [
   {
@@ -32,6 +33,7 @@ let routes = [
     EmployeeAddComponent,
     EmployeeDeleteComponent,
     EmployeeEditDialog,
+    EmployeeTimesheetDialog,
     NavComponent,
   ],
   imports: [
@@ -49,12 +51,14 @@ let routes = [
     MatDialogModule,
     MatRadioModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  entryComponents: [EmployeeDeleteComponent, EmployeeEditDialog],
+  entryComponents: [EmployeeDeleteComponent, EmployeeEditDialog, EmployeeTimesheetDialog],
   providers: [WebService],
   bootstrap: [AppComponent]
 })

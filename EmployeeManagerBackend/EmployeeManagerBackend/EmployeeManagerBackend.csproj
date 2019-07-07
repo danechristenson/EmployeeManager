@@ -198,14 +198,19 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907070318047_Initial.cs" />
-    <Compile Include="Migrations\201907070318047_Initial.Designer.cs">
-      <DependentUpon>201907070318047_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201907071750442_Initial.cs" />
+    <Compile Include="Migrations\201907071750442_Initial.Designer.cs">
+      <DependentUpon>201907071750442_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907071809255_Initial1.cs" />
+    <Compile Include="Migrations\201907071809255_Initial1.Designer.cs">
+      <DependentUpon>201907071809255_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepartmentStructure.cs" />
@@ -254,8 +259,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907070318047_Initial.resx">
-      <DependentUpon>201907070318047_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907071750442_Initial.resx">
+      <DependentUpon>201907071750442_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907071809255_Initial1.resx">
+      <DependentUpon>201907071809255_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
