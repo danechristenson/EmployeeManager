@@ -49,8 +49,8 @@ export class WebService {
   async putEmployee(id: any, employee: any) {
     try {
       let response = await this.http.put(this.BASE_URL + 'Employees/' + id, employee).toPromise();
-      this.employeeStore.push(response);
-      this.employeeSymbol.next(this.employeeStore);
+      // this.employeeStore.push(response);
+      // this.employeeSymbol.next(this.employeeStore);
     } catch (error) {
       this.handleError("Unable to modify employee.");
     }

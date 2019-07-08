@@ -1,9 +1,9 @@
 <h1 mat-dialog-title>Clocking</h1>
 <div mat-dialog-content>
   <mat-card>
-    Clocking in for {{ data.Name }} {{ clockDate| date: 'MMM dd, yyyy' }}
+    Clocking in for {{ name }} {{ clockDate| date: 'MMM dd, yyyy' }}
   </mat-card>
-  <mat-form-field>
+  <!-- <mat-form-field>
     <input matInput [matDatepicker]="clockDate" [ngClass]="{'error': isValid('clockDate')}" formControlName="clockDate" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="clockDate"></mat-datepicker-toggle>
     <mat-datepicker #clockDate></mat-datepicker>
@@ -13,7 +13,7 @@
   </mat-form-field>
   <mat-form-field>
     <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime">
-  </mat-form-field>
+  </mat-form-field> -->
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>

@@ -38,11 +38,11 @@
   </ng-container>
   <ng-container matColumnDef="startTime">
     <th mat-header-cell *matHeaderCellDef> Start Time </th>
-    <td mat-cell *matCellDef="let element" type="time"> {{element.startTime | date: 'hh:mm a'}} </td>
+    <td mat-cell *matCellDef="let element" type="time"> {{element.startTime | date: 'hh:mm'}} </td>
   </ng-container>
   <ng-container matColumnDef="endTime">
     <th mat-header-cell *matHeaderCellDef> End Time </th>
-    <td mat-cell *matCellDef="let element" type="time"> {{element.endTime | date: 'hh:mm a'}} </td>
+    <td mat-cell *matCellDef="let element" type="time"> {{element.endTime | date: 'hh:mm'}} </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 

@@ -10,6 +10,7 @@ import { WebService } from './web.service';
 export class EmployeeTimesheetDialog {
   form: any;
   clockDate: Date = new Date();
+  name: string;
   constructor(
     public dialogRef: MatDialogRef<EmployeeListComponent>,
     private formBuilder: FormBuilder,
@@ -17,11 +18,13 @@ export class EmployeeTimesheetDialog {
     @Inject(MAT_DIALOG_DATA) public data: any){
       this.form = formBuilder.group({
         Id: [data.id],
-        Name: [data.firstName + " " + data.lastName],
         ClockDate: ['',Validators.required],
         StartTime: ['', Validators.required],
         EndTime: ['', Validators.required]
       });
+      this.name= data.firstName + " " + data.lastName;
+      console.log(this.name)
+      console.log(data.firstName)
   }
 
   onNoClick(): void {

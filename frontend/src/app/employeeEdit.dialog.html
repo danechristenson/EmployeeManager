@@ -26,10 +26,10 @@
       <input style="width: 350px" [ngClass]="{'error': isValid('Phone')}" type="phone" mat-input-container matInput placeholder="Phone" formControlName="Phone" value="{{data.employee.phone}}">
     </mat-form-field>
     <mat-form-field>
-      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('StartTime')}" mat-input-container matInput placeholder="Start Time" formControlName="StartTime" value=" {{data.employee.startTime | date: 'hh:mm a'}} ">
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('StartTime')}" matInput placeholder="Start Time" formControlName="StartTime" value="{{data.employee.startTime | date: 'hh:mm'}}">
     </mat-form-field>
     <mat-form-field>
-      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime" value="{{data.employee.endTime | date: 'hh:mm a'}}">
+      <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime" value="{{data.employee.endTime| date: 'hh:mm'}}">
     </mat-form-field>
     <mat-form-field>
       <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID" value="{{data.employee.managerID}}">
