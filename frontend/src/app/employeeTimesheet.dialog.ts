@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { EmployeeListComponent } from './employeeList.component';
+import { EmployeeListComponent, employee } from './employeeList.component';
 import { FormBuilder, Validators } from '@angular/forms';
 import { WebService } from './web.service';
 
@@ -8,23 +8,30 @@ import { WebService } from './web.service';
   templateUrl: 'employeeTimesheet.dialog.html'
 })
 export class EmployeeTimesheetDialog {
-  form: any;
+  timeSheetForm: any;
   clockDate: Date = new Date();
   name: string;
+  employee:any;
   constructor(
     public dialogRef: MatDialogRef<EmployeeListComponent>,
     private formBuilder: FormBuilder,
     private webService :WebService,
     @Inject(MAT_DIALOG_DATA) public data: any){
-      this.form = formBuilder.group({
+      this.timeSheetForm = formBuilder.group({
         Id: [data.id],
-        ClockDate: ['',Validators.required],
-        StartTime: ['', Validators.required],
-        EndTime: ['', Validators.required]
+        ClockDate: [''],
+        StartTime: [''],
+        EndTime: ['']
       });
       this.name= data.firstName + " " + data.lastName;
-      console.log(this.name)
-      console.log(data.firstName)
+      console.log(data.id);
+      this.employee = webService.employees.forEach(item => {
+        console.log(item);
+        // if (item.id = data.id){
+        //   return item;
+        // }
+      });
+      console.log(this.employee);
   }
 
   onNoClick(): void {
@@ -33,11 +40,8 @@ export class EmployeeTimesheetDialog {
 
   submit() {
     this.dialogRef.close();
-    console.log(this.form.value);
+    console.log(this.timeSheetForm.value);
     // this.webService.postClockIn(this.form.value);
   }
 
-  isValid(control:string){
-    return this.form.controls[control].invalid
-  }
 }

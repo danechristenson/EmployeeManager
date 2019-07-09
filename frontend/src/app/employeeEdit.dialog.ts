@@ -40,14 +40,11 @@ export class EmployeeEditDialog {
         EndTime: [data.employee.endTime],
         ManagerID: [data.employee.managerId]
       });
-      console.log(data.employee.startTime)
-      console.log(data.employee.endTime)
   }
   onNoClick(): void {
     this.dialogRef.close();
   }
   onSubmit(){
-    console.log(this.form.value.StartTime, this.form.value.EndTime);
     this.webService.putEmployee(this.data.employee.id, this.form.value);
   }
 

@@ -18,6 +18,15 @@ export interface employee {
   EndTime: string;
 }
 
+export interface schedule {
+  Id: number;
+  Name: string;
+  EmployeeId: number;
+  Day: Date;
+  StartTime: Date;
+  EndTime: Date;
+}
+
 @Component({
   selector: "employees",
   templateUrl: 'employeeList.component.html'
