@@ -20,7 +20,7 @@
       <input style="width: 350px" [ngClass]="{'error': isValid('Postal')}" mat-input-container matInput placeholder="Postal Code" formControlName="Postal">
     </mat-form-field>
     <mat-form-field>
-      <input style="width: 350px" [ngClass]="{'error': isValid('Phone')}" type="phone" mat-input-container matInput placeholder="Phone" formControlName="Phone">
+      <input style="width: 350px" [ngClass]="{'error': isValid('Phone')}" type="phone" mat-input-container matInput placeholder="Phone" formControlName="Phone" minlength="10" maxlength="15">
     </mat-form-field>
     <mat-form-field>
       <input type="time" style="width: 350px" [ngClass]="{'error': isValid('StartTime')}" mat-input-container matInput placeholder="Start Time" formControlName="StartTime">

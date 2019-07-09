@@ -1,9 +1,9 @@
-<h1 mat-dialog-title>Clocking</h1>
+<h1 mat-dialog-title>Availability</h1>
 <div mat-dialog-content>
   <mat-card>
-    Clocking in for {{ name }}
+    Check Availability
   </mat-card>
-  <form [formGroup]="timeSheetForm" (ngSubmit)="submit()">
+  <form [formGroup]="availabilityForm" (ngSubmit)="submit()">
   <mat-form-field>
     <input matInput [matDatepicker]="clockDate" formControlName="ClockDate" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="clockDate"></mat-datepicker-toggle>
@@ -19,5 +19,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button class="danger" (click)="submit()">Clock</button>
+  <button mat-button class="primary" (click)="submit()">Submit</button>
 </div> 

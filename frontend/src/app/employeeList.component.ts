@@ -5,6 +5,7 @@ import { EmployeeAddComponent } from './employeeAdd.component';
 import { EmployeeDeleteComponent } from './employeeDelete.component';
 import { EmployeeEditDialog } from './employeeEdit.dialog';
 import { EmployeeTimesheetDialog } from './employeeTimesheet.dialog';
+import { EmployeeAvailabilityDialog } from './employeeAvailability.dialog';
 
 export interface employee {
   Id: number;
@@ -77,6 +78,12 @@ export class EmployeeListComponent {
       //   this.webService.deleteEmployee(id);
       // }
     })
+  }
+
+  checkAvailable() {
+    const dialogRef = this.dialog.open(EmployeeAvailabilityDialog, {
+      width: '680px',
+    });
   }
 
 

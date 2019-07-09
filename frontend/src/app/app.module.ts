@@ -15,6 +15,7 @@ import { NavComponent } from './nav.component';
 import { EmployeeDeleteComponent } from './employeeDelete.component';
 import { EmployeeEditDialog } from './employeeEdit.dialog';
 import { EmployeeTimesheetDialog } from './employeeTimesheet.dialog';
+import { EmployeeAvailabilityDialog } from './employeeAvailability.dialog';
 
 let routes = [
   {
@@ -34,6 +35,7 @@ let routes = [
     EmployeeDeleteComponent,
     EmployeeEditDialog,
     EmployeeTimesheetDialog,
+    EmployeeAvailabilityDialog,
     NavComponent,
   ],
   imports: [
@@ -58,7 +60,7 @@ let routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  entryComponents: [EmployeeDeleteComponent, EmployeeEditDialog, EmployeeTimesheetDialog],
+  entryComponents: [EmployeeDeleteComponent, EmployeeEditDialog, EmployeeTimesheetDialog, EmployeeAvailabilityDialog],
   providers: [WebService],
   bootstrap: [AppComponent]
 })
