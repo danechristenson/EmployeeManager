@@ -29,12 +29,12 @@
       <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime">
     </mat-form-field>
     <mat-form-field>
-      <mat-select>
+      <!-- <mat-select>
       <mat-option *ngFor="let manager of managers" [value]="manager.Id">
         {{manager.FirstName}} {{ manager.LastName}}
       </mat-option>
-    </mat-select>
-      <!-- <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID"> -->
+    </mat-select> -->
+      <input style="width: 350px" [ngClass]="{'error': isValid('ManagerID')}"  matInput placeholder="ManagerID" formControlName="ManagerID">
     </mat-form-field>
     <br>
     <button mat-raised-button mat-dialog-close (click)="onSubmit()" color="primary">Add Employee</button>

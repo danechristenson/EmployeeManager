@@ -24,14 +24,6 @@ export class EmployeeTimesheetDialog {
         EndTime: ['']
       });
       this.name= data.firstName + " " + data.lastName;
-      console.log(data.id);
-      this.employee = webService.employees.forEach(item => {
-        console.log(item);
-        // if (item.id = data.id){
-        //   return item;
-        // }
-      });
-      console.log(this.employee);
   }
 
   onNoClick(): void {
