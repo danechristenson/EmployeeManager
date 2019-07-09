@@ -11,18 +11,12 @@ namespace EmployeeManagerBackend.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string Name
-        {
-            get
-            {
-                return Employee.FirstName + " " + Employee.LastName;
-            }
-        }
+
+
         [ForeignKey("Employee")]
         public int EmployeeId { get; set; }
         [Required]
-        public DateTime Day { get; set; }
+        public DateTime ClockDate { get; set; }
         [Required]
         public DateTime StartTime { get; set; }
         [Required]

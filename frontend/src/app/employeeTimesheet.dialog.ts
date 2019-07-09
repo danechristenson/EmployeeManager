@@ -18,7 +18,7 @@ export class EmployeeTimesheetDialog {
     private webService :WebService,
     @Inject(MAT_DIALOG_DATA) public data: any){
       this.timeSheetForm = formBuilder.group({
-        Id: [data.id],
+        EmployeeId: [data.id],
         ClockDate: [''],
         StartTime: [''],
         EndTime: ['']
@@ -39,9 +39,9 @@ export class EmployeeTimesheetDialog {
   }
 
   submit() {
-    this.dialogRef.close();
     console.log(this.timeSheetForm.value);
-    // this.webService.postClockIn(this.form.value);
+    this.dialogRef.close();
+    this.webService.postClockIn(this.timeSheetForm.value);
   }
 
 }

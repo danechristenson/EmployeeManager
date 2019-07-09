@@ -5,15 +5,15 @@
   </mat-card>
   <form [formGroup]="timeSheetForm" (ngSubmit)="submit()">
   <mat-form-field>
-    <input matInput [matDatepicker]="clockDate" [ngClass]="{'error': isValid('clockDate')}" formControlName="clockDate" placeholder="Choose a date">
+    <input matInput [matDatepicker]="clockDate" formControlName="ClockDate" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="clockDate"></mat-datepicker-toggle>
     <mat-datepicker #clockDate></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
-    <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="Start Time" formControlName="StartTime">
+    <input type="time" style="width: 350px" matInput placeholder="Start Time" formControlName="StartTime">
   </mat-form-field>
   <mat-form-field>
-    <input type="time" style="width: 350px" [ngClass]="{'error': isValid('EndTime')}" matInput placeholder="End Time" formControlName="EndTime">
+    <input type="time" style="width: 350px" matInput placeholder="End Time" formControlName="EndTime">
   </mat-form-field>
   </form>
 </div>

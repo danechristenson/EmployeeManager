@@ -212,6 +212,22 @@
     <Compile Include="Migrations\201907071809255_Initial1.Designer.cs">
       <DependentUpon>201907071809255_Initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907090207444_Initial2.cs" />
+    <Compile Include="Migrations\201907090207444_Initial2.Designer.cs">
+      <DependentUpon>201907090207444_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907090218442_Initial3.cs" />
+    <Compile Include="Migrations\201907090218442_Initial3.Designer.cs">
+      <DependentUpon>201907090218442_Initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907090223279_Initial4.cs" />
+    <Compile Include="Migrations\201907090223279_Initial4.Designer.cs">
+      <DependentUpon>201907090223279_Initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907090224429_Initial5.cs" />
+    <Compile Include="Migrations\201907090224429_Initial5.Designer.cs">
+      <DependentUpon>201907090224429_Initial5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepartmentStructure.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -264,6 +280,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907071809255_Initial1.resx">
       <DependentUpon>201907071809255_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907090207444_Initial2.resx">
+      <DependentUpon>201907090207444_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907090218442_Initial3.resx">
+      <DependentUpon>201907090218442_Initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907090223279_Initial4.resx">
+      <DependentUpon>201907090223279_Initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907090224429_Initial5.resx">
+      <DependentUpon>201907090224429_Initial5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
