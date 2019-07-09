@@ -24,6 +24,15 @@ namespace EmployeeManagerBackend.Controllers
             return db.Schedules;
         }
 
+        public void GetAvailabilities(DateTime ClockDate, DateTime StartDate, DateTime EndDate)
+        {
+            //staff available
+
+            // staff clocked in
+
+            return;
+        }
+
         // GET: api/Schedules/5
         [ResponseType(typeof(Schedule))]
         public async Task<IHttpActionResult> GetSchedule(int id)

@@ -76,6 +76,14 @@ export class WebService {
     }
   }
 
+  getSchedules(ClockDate:Date, StartTime:Date, EndTime:Date) {
+    let urlString = `${ClockDate}&${StartTime}&${EndTime}`;
+    this.http.get(this.BASE_URL+'Schedules/'+ urlString).subscribe(response => {
+    }, error => {
+      this.handleError("Unable to get Availability.");
+    });
+  }
+
 
 
   private handleError(error:string) {
