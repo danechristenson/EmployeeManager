@@ -24,13 +24,23 @@ namespace EmployeeManagerBackend.Controllers
             return db.Schedules;
         }
 
-        public void GetAvailabilities(DateTime ClockDate, DateTime StartDate, DateTime EndDate)
+        public Object GetAvailability(DateTime ClockDate, DateTime StartDate, DateTime EndDate)
         {
             //staff available
+            var staffCount = db.Employees.Select(e => e.EndTime >= EndDate && e.StartTime <= StartDate).Count();
 
             // staff clocked in
+            var querySchedules = from sch in db.Schedules
+                                 where sch.ClockDate == ClockDate && sch.StartTime >= StartDate
+                                 && sch.EndTime <= EndDate
+                                 select sch;
+            var clockedIn = querySchedules.Count();
 
-            return;
+            return new
+            {
+                clockedIn,
+                staffCount
+            };
         }
 
         // GET: api/Schedules/5
